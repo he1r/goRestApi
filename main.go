@@ -1,6 +1,15 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"restApi/initializers"
+
+	"github.com/gin-gonic/gin"
+)
+
+func init() {
+	initializers.LoadDotEnv()
+	initializers.ConnectToDB()
+}
 
 func main() {
 
